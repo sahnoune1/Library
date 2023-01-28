@@ -11,8 +11,12 @@ function addBookToLibrary() {
   const author = prompt("give me the author name");
   const pages = prompt("give me the number of pages");
 
-  const book1 = new Book(title, author, pages);
-  array[0] = book1;
+  const book = new Book(title, author, pages);
+  array.push(book);
   return array;
 }
-console.log(addBookToLibrary());
+let i = 0;
+for (i = 0; i < 2; i++) {
+  addBookToLibrary();
+}
+console.log(array);
