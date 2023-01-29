@@ -82,6 +82,7 @@ butt.addEventListener("click", () => {
     const div = document.createElement("div");
     div.innerHTML = `${bookTitle},${bookAuthor},${bookPages}`;
     document.body.appendChild(div);
+    document.body.removeChild(form);
   });
 });
 
