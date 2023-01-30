@@ -10,7 +10,7 @@ function renderBooks() {
     const div = document.createElement("div");
     div.innerHTML = `${array[j].title},${array[j].author},${array[j].pages}<button class="delete">delete</button>`;
     div.setAttribute("class", "new");
-    document.body.appendChild(div);
+    document.body.querySelector(".box4").appendChild(div);
 
     const deleteBtn = div.querySelector(".delete");
     deleteBtn.addEventListener("click", () => {
@@ -38,7 +38,7 @@ let statement = false;
 const butt = document.createElement("button");
 butt.innerHTML = "give me the books details";
 butt.setAttribute("class", "butt");
-document.body.appendChild(butt);
+document.body.querySelector(".box2").appendChild(butt);
 
 /* the butt event listener */
 
@@ -48,6 +48,7 @@ butt.addEventListener("click", () => {
     statement = false;
   } else if (statement === false) {
     form = document.createElement("form");
+
     const titleLabel = document.createElement("label");
     titleLabel.setAttribute("for", "title");
     titleLabel.innerHTML = "title";
@@ -95,7 +96,7 @@ butt.addEventListener("click", () => {
     form.appendChild(subButtInput);
     form.appendChild(subButtLabel);
 
-    document.body.appendChild(form);
+    document.body.querySelector(".box3").appendChild(form);
 
     /* submit event listener */
     form.addEventListener("submit", (event) => {
