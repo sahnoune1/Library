@@ -8,9 +8,22 @@ function renderBooks() {
   }
   for (let j = 0; j < array.length; j++) {
     const div = document.createElement("div");
-    div.innerHTML = `${array[j].title},${array[j].author},${array[j].pages}<button class="delete">delete</button>`;
+    div.innerHTML = `${array[j].title},${array[j].author},${array[j].pages}<button class="delete">delete</button><button class="read">read</button>`;
     div.setAttribute("class", "new");
     document.body.querySelector(".box4").appendChild(div);
+
+    const toggle = document.querySelector(".read");
+    toggle.addEventListener("click", () => {
+      if (toggle.innerHTML === "read") {
+        toggle.innerHTML = "not read";
+        toggle.classList.remove("read");
+        toggle.setAttribute("class", "not-read");
+      } else if (toggle.innerHTML === "not read") {
+        toggle.innerHTML = "read";
+        toggle.classList.remove("not-read");
+        toggle.setAttribute("class", "read");
+      }
+    });
 
     const deleteBtn = div.querySelector(".delete");
     deleteBtn.addEventListener("click", () => {
